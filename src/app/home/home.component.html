@@ -1,0 +1,18 @@
+<div class="content" role="main">
+    <h2>Learn Input Handling using forms</h2>
+    </div>
+    <form class="login-form content " [formGroup]="loginFormGroup" (ngSubmit)="logIn()">
+     <label >Name: </label>
+     <input name="name" class="input" type="text" [formControl]="nameForm" >
+     <br><br>
+     <label >Email: </label>
+     <input name="email" class="input" type="email" [formControl]="emailForm" >
+     <p style="color: red" *ngIf="emailFormErrors('email')">
+       Enter a valid Email
+     </p>
+     <br><br>
+     <button class="primary-gradient-background login-button" type="submit" [disabled]="!loginFormGroup.valid">
+       Login
+     </button>
+    </form>
+</div>    
